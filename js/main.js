@@ -34,12 +34,12 @@ function getData(map){
   var satellite = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}').addTo(boydMap);
 
 
-  var journeyUrl = '../Boyd/data/journey.png';
+  var journeyUrl = '../data/journey.png';
   var journeyMapBounds = [[73.1463636399943, -27.8191568294706], [72.7150485066271, -27.2272940697481]];
   var journeyMapLayer = L.imageOverlay(journeyUrl, journeyMapBounds);
 
 
-  var thirtiesMapUrl = '../Boyd/data/map.png';
+  var thirtiesMapUrl = '../data/map.png';
   var thirtiesMapBounds = [[73.1725143552295, -29.075878848967], [71.7000485066271, -25.8007621693321]];
   var thirtiesMapLayer = L.imageOverlay(thirtiesMapUrl, thirtiesMapBounds);
 
