@@ -1,0 +1,368 @@
+/*whole map*/
+html, body, #map {
+  height: 100%;
+  width: 100%;
+}
+
+/* browser adds margin by default, and that adds a scrollbar, but we don't want that*/
+body {
+  margin: 0;
+}
+
+/*title div of map */
+#title {
+  position: fixed;
+  z-index: 100000;
+  top: 0;
+  left: 0;
+  width:100%;
+  padding-top:8px;
+  padding-bottom:20px;
+  background-color: rgba(167, 199, 210,0.65);
+  font-family:'Montserrat', sans-serif;
+  font-weight: 500;
+
+}
+
+/* about-louise div */
+#about-louise {
+  display: block;
+  position: fixed;
+  left: 15px;
+  bottom: 0;
+  border-radius: 4px;
+  height:80px;
+  width:180px;
+  z-index: 100000;
+  background-color: rgba(167, 199, 210,0.65);
+  padding-top:.5em;
+  padding-left: 1em;
+  padding-bottom:3em;
+  color: rgba(51, 51, 51, 1);
+  font-family:'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+/*makes the about Louise href not look like a link */
+#about-louise:hover {
+  text-decoration: none;
+  background-color: rgba(167, 199, 210,0.95);
+}
+
+
+/* about-agsl div */
+#about-agsl {
+  display: block;
+  position: fixed;
+  left: 200px;
+  bottom: 0;
+  border-radius: 4px;
+  height:60px;
+  width:100px;
+  z-index: 100000;
+  background-color: rgba(206, 101, 8, 0.65);
+  padding-top:.5em;
+  padding-left: 1em;
+  padding-bottom:1em;
+  color: rgba(51, 51, 51, 1);
+  font-family:'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+/*makes the about Louise href not look like a link */
+#about-agsl:hover {
+  text-decoration: none;
+  background-color: rgba(206, 101, 8, 0.9);
+}
+
+/* browser interprets title as h1 so use this for styling title */
+h1{
+  margin-left: 65px;
+  margin-right:65px;
+  margin-top:2px;
+  font-size: 40px;
+
+}
+
+/*styles the opacity slider*/
+.opacity-slider {
+  border: 2px solid rgba(0,0,0,0.2);
+  border-radius: 4px;
+  padding: 8px;
+  padding-top:10px;
+  font-family:'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  background-color:white;
+}
+
+/* actual bar inside opactiy slider */
+#opacity-changer {
+  width: 400px;
+}
+
+/* this gets rid of the option to turn off or change base layers && also the separator line in between  */
+/* base layer choices and overlay image choices  */
+.leaflet-control-layers-base, .leaflet-control-layers-separator {
+  display: none;
+}
+
+/* put the map on the top */
+.leaflet-top{
+  z-index: 9999999999999999999;
+}
+
+/*opted for bootstrap modal rather than leaflet popup, but if want to revert back, this is the styling for popups*/
+.leaflet-popup-content-wrapper, .leaflet-popup-tip{
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+}
+
+/*? */
+/*#imageModal {
+  width: 100%;
+  height: 100%;
+  z-index: 99999999999999999991;
+
+} */
+
+
+/* adjusts the size of the image modal popup window */
+.image-popup{
+  width: 50%;
+  margin: 3% 25%;
+}
+
+/* adjusts the size of the image modal popup window */
+.louise-popup{
+  width: 40%;
+  margin: 3% 30%;
+}
+
+/* adjusts the size of the image modal popup window */
+.agsl-popup{
+  width: 40%;
+  margin: 3% 30%;
+}
+
+/*main text of LAB description*/
+p {
+  font-size:18px;
+  max-height:400px;
+  overflow: auto;
+  font-family: 'Montserrat Alternatives', sans-serif;
+  font-weight: 400;
+}
+
+/* italicized quote in LAB description */
+h2{
+  font-family: 'Montserrat Alternatives', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+
+}
+
+/*
+.modal-body {
+  padding: 0;
+} */
+
+/* gets rid of line in bootstraps modal header. need the header itself to place the close button, but we
+want to remove title and line */
+.modal-header {
+  border-bottom: 0;
+}
+
+/* style the close button on the image modal */
+.close{
+  color: white;
+  opacity:.6;
+  font-size: 36px;
+}
+
+/*style the stuff inside the modal */
+.modal-content {
+  background-color: rgba(0, 0, 0, .55);
+  color: white;
+  padding-bottom: 2em;
+  padding-left: 1em;
+  padding-right: 1em;
+  font-family: 'Montserrat Alternatives', sans-serif;
+  font-weight: 400;
+}
+
+/* centers the image in the middle of the bootstrap column inside the modal */
+.put-image-here {
+  text-align: center;
+}
+
+/* styles the text of the modal. Specifically says that if text is a certain length, start scrolling */
+.put-desc-here {
+  margin: auto;
+  font-size:18px;
+  max-height: 375px;
+  overflow: auto;
+}
+
+/* style of the buttons in the modal which link out to AGSL collections */
+.image-buttons {
+  position: absolute;
+  bottom: 0;
+  right: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+
+/*style the modal title*/
+.modal-title{
+  position:absolute;
+  left:45px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size:32px;
+}
+
+/* RESPONSIVE STUFF */
+@media (max-width: 1360px) {
+  h1{
+    font-size:38px;
+  }
+}
+
+@media (max-width: 1320px) {
+  h1{
+    font-size:36px;
+  }
+}
+
+@media (max-width: 1260px) {
+  h1{
+    font-size:34px;
+  }
+}
+
+@media (max-width: 1198px) {
+  h1{
+    font-size:32px;
+  }
+}
+
+@media (max-width: 1135px) {
+  h1{
+    font-size:30px;
+  }
+}
+
+@media (max-width: 1072px) {
+  h1{
+    font-size:28px;
+  }
+}
+
+@media (max-width: 1009px) {
+  h1{
+    font-size:26px;
+  }
+  .image-buttons{
+    position:static;
+    margin:auto;
+    text-align:center;
+  }
+  .put-image-here{
+    margin-bottom:1em;
+  }
+  .put-desc-here {
+    margin-bottom:1em;
+}
+
+@media (max-width: 946px) {
+  h1{
+    font-size:24px;
+  }
+}
+
+@media (max-width: 880px) {
+  h1{
+    font-size:22px;
+  }
+}
+
+@media (max-width: 821px) {
+  h1{
+    font-size:20px;
+  }
+}
+
+@media (max-width: 758px) {
+  #title{
+    padding-bottom:10px;
+  }
+
+  h1 {
+    margin-bottom: 0;
+    font-size:18px;
+  }
+}
+
+@media (max-width: 600px){
+  .image-popup{
+    width:100%;
+    margin:0;
+  }
+  .put-desc-here {
+    max-height:none;
+    overflow: visible;
+  }
+  .louise-popup{
+    width:100%;
+    margin:0;
+  }
+  .agsl-popup{
+    width:100%;
+    margin:0;
+    max-height:none;
+    overflow: visible;
+  }
+  .modal-title{
+    font-size: 30px;
+  }
+  .modal-header{
+    padding-bottom:0px;
+  }
+  .modal-body{
+    padding-top:10px;
+  }
+  .louise-facts{
+    padding-top:10px;
+  }
+  #about-agsl{
+    font-size: 14px;
+    height:30px;
+    width:50px;
+    padding-bottom:2em;
+    left:120px;
+    padding-left:.5em;
+    padding-right:.5em;
+  }
+  #about-louise{
+    font-size: 14px;
+    padding-bottom:2em;
+    height:70px;
+    width:90px;
+  }
+  #thxmn{
+    padding-top:10px;
+  }
+
+  }
+
+  @media (max-width: 435px){
+    .opacity-slider {
+      display: none !important;
+    }
+    #opacity-changer {
+      width: 100%;
+    }
+}

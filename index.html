@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Boyd Map</title>
+
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<link href="css/normalize.css" rel="stylesheet">
+		<link href="lib/bootstrap/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="lib/leaflet/leaflet.css">
+		<link rel="stylesheet" href="lib/leaflet/src/leaflet-search.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates" rel="stylesheet">
+		<link rel="stylesheet" href="lib/leaflet/markercluster/dist/MarkerCluster.css">
+		<link rel="stylesheet" href="lib/leaflet/markercluster/dist/MarkerCluster.Default.css">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src = "lib/bootstrap/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script type="text/javascript"  src ="lib/leaflet/leaflet.js"></script>
+		<script type="text/javascript"  src ="lib/leaflet/leaflet-src.js"></script>
+		<script type="text/javascript"  src ="lib/leaflet/markercluster/dist/leaflet.markercluster.js"></script>
+		<script type = "text/javascript" src ="js/geojson.js"></script>
+
+  </head>
+
+  <body>
+					<div id="map"></div>
+					<div id = "title">
+						<h1>Louise A. Boyd's Exploration of Kjerulf and Dicksons Fjords, 1931</h1>
+					</div>
+					<div id = "transparencyslider"></div>
+          <a id="about-louise" href="#">Who was Louise A. Boyd?</a>
+					<a id="about-agsl" href="#">AGSL</a>
+
+<!-- LOUISE MODAL STARTS HERE -->
+<div class="modal fade" id="louiseModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog louise-popup" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Louise A. Boyd</h4>
+      </div>
+      <div class="modal-body">
+        <div class = "container-fluid">
+					<div class = "row">
+						<div class = "col-md-6">
+							<div class = "louise-pic">
+								<img class = "img-responsive" src = "data/biopic.png">
+							</div>
+						</div>
+						<div class = "col-md-6">
+							<div class = "louise-facts">
+								<p><i>“Nearly everywhere the glaciers showed signs of having receded” (1935) </i>
+								</h2>
+									<br>
+									<br>
+													In the 1930s Louise Arner Boyd funded and led 5 scientific expeditions
+										to East Greenland and took teams of geologists, botanists, surveyors, and physiographers.
+									<br>
+									<br>
+												This map focuses on their 1931 expedition to extremities of the Franz Josef Fjord.
+									<br>
+									<br>
+									Louise conceived of this journey as a “photographic reconnaissance” in order to prepare
+									 herself and this team for their more comprehensive survey of the region to come later in 1933.
+									<br>
+ 									<br>
+									This journey was conducted in cooperation with the American Geographical Society of New York.
+									The American Geographical Society Library (AGSL) now holds nearly 3,000 images taken by Boyd primarily covering
+									her expeditions to Greenland (over 1,000 photos) and her photo survey of Poland (nearly 1,800 images).
+									<br>
+									<br>
+									Extensive coverage of Boyd's expeditions are available in her two books, “The Fiord Region of East Greenland”
+									(1935) and “The Coast of Northeast Greenland,” (1948). Both publications are available in the AGS Library
+									holdings.
+									<br>
+									<br>
+
+									In these texts, Boyd tells of her earlier journeys to the polar sea, when she visited Franz Josef Land in 1924,
+									 and aided in the search for famed lost explorer Amundsen in 1928. These trips, she explains,
+									 acquainted her with the polar environment, marine ice, and the hazardous conditions she would later
+									 encounter in the trips of 1931 and 1933.
+									<br>
+ 									<br>
+									“The reward of crossing,” these hazardous conditions, she writes, “is access to a land of extraordinary
+									grandeur and beauty.”
+									<br>
+									<br>
+									Her photographs taken during the 1931 and 1933 expeditions depict “topographic forms, glaciers, sea ice,
+									fine scenery, animal life, and flora.”
+									<br>
+									<br>
+									Boyd describes “a large fan-shaped and partly submerged delta on the west side at the bend of the fjord
+									extends so far out that they had to steer to the far east side of Kjerulfs Fjord to “avoid grounding.”
+									<br>
+									<br>
+									She speculates that all of the icebergs in Kjerulfs fjord almost certainly drifted in from Franz Josefs Fjord,
+									 because no glacier terminates in Kjerulfs.
+									 <br>
+									 <br>
+									 The group saw various animals during these trips, including muskox, Greenland hare, one walrus
+									 (in Franz Josefs Fjord), narwals (“plentiful” at the outer end of Kjerulfs Fjord), and birds like raven,
+									  wild geese, and eider duck.
+										<br>
+										<br>
+										There were no permanent human settlements, but the group did find wooden huts where Danish and Norwegian
+										hunters camped.
+										<br>
+										<br>
+										Use this map to see which vantage point Louise took photographs from during her 1931 expedition
+										to extremities of the Franz Josef Fjord.
+										<br>
+										<br>
+										Toggle on the manuscript map Boyd drew, and see how the data points correspond to her photo notations
+										indicating where each image was taken from (her annotations are noted on the reverse side of the photos).
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LOUISE MODAL ENDS HERE -->
+
+
+<!-- AGSL MODAL STARTS HERE -->
+<div class="modal fade" id="agslModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog agsl-popup" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="attrs">Attribution</h4>
+      </div>
+      <div class="modal-body">
+				<p id="thxmn">
+					This map is the brain child of Susan Peschel, Visual Resources Librarian at the American Geographical Society Library.
+					Susan dreamt up the concept of this map years ago, and worked tirelessly with Susan Dykes in creating metadata and preparing
+					these images for web access. This project would not have been possible without them.
+					<br>
+					<br>
+					Many thanks to Ann Hanlon, Max Cozzi, and the team over at UWM Digital Collections for rapid-fire digitization of the images
+					featured in this project. Thanks to Fritz Nelson for taking the time to share his extensive knowledge of Louise A. Boyd, polar
+					exploration, and the American Geographical Society.
+					<br>
+					<br>
+					A special thanks to Benjamin Schroeder, who taught me almost everything I know about Javascript, jQuery, and Leaflet. Thank you Ben for all
+					your help, and for inspiring in me an interest in web development in the first place. Finally, thanks to Marcy Bidney and Stephen Appel
+					for continual support and brilliance.
+					<br>
+					<br>
+					The American Geographical Society Library (AGSL), one of the premier collections of its kind in North America, contains over 1.3 million items
+					supporting instruction, research and outreach at the University of Wisconsin-Milwaukee and around the world.
+					<br>
+					<br>
+					The collection contains maps, atlases, books periodicals, film media and digital data files. Its scope is worldwide with coverage from the
+					15th century to the present. Its resources have been used to produce an ongoing series of digital collections, including an award winning website
+					on Afghanistan, a comprehensive site on world transportation and collections featuring unique photographic documentation of such places as Tibet,
+					the Republic of Georgia, Korea and World War II Poland. The AGSL offers scholarly programs for the campus and local community throughout the year
+					and welcomes visiting scholars from across the US and the world.
+			</div>
+    </div>
+  </div>
+</div>
+
+<!-- AGSL MODAL ENDS HERE -->
+
+
+
+
+
+
+
+<!-- IMAGE POPUP MODAL STARTS HERE -->
+<div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal-dialog image-popup" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    </div>
+    <div class="modal-body">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-7 left-side">
+            <div class="put-image-here"></div>
+          </div>
+          <div class="col-md-5 right-side">
+            <div class="put-desc-here"></div>
+          </div>
+          <div class="image-buttons">
+            <a href="#" class="put-url-here" target="_blank"><button class="btn">View Image</button></a>
+            <a href="https://uwm.edu/libraries/agsl/obtaining-copies-of-ags-library-materials/" target="_blank"><button class="btn">Request Image</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--<div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>-->
+  </div>
+</div>
+</div>
+<!-- IMAGE POPUP MODAL ENDS HERE -->
+
+
+
+		<script type= "text/javascript" src = "js/main.js"> </script>
+
+
+	</body>
+</html>
