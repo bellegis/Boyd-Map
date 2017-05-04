@@ -306,6 +306,17 @@ want to remove title and line */
   }
 }
 
+@media (max-width: 706px) {
+  #title{
+    padding-bottom:10px;
+  }
+
+  h1 {
+    margin-bottom: 0;
+    font-size:16px;
+  }
+}
+
 @media (max-width: 600px){
   .image-popup{
     width:100%;
